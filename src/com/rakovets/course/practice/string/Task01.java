@@ -32,7 +32,9 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		int index = fullName.indexOf(" ");
+		String name = fullName.substring(0, index);
+		return name;
 	}
 
 	/**
@@ -44,7 +46,9 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		int index = fullName.indexOf(" ");
+		String surname = fullName.substring(index + 1);
+		return surname;
 	}
 
 	/**
@@ -56,6 +60,10 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		int index = fullName.indexOf(" ");
+		String name = fullName.substring(0, index);
+		String surname = fullName.substring(index + 1);
+		String reverse = String.join(" ", surname, name);
+		return reverse;
 	}
 }
