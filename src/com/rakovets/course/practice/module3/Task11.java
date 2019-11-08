@@ -30,5 +30,14 @@ public class Task11 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        if (letter >= 'A' & letter <= 'Z' || letter >= 'a' & letter <= 'z') {
+            System.out.print("latin");
+        } else if (letter >= 'а' & letter <= 'я' || letter >= 'А' & letter <= 'Я') {
+            System.out.print("cyrillic");
+        } else if (letter >= '0' & letter <= '9') {
+            System.out.print("digit");
+        } else {
+            System.out.print("undefined");
+        }
     }
 }
