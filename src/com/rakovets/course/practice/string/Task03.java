@@ -34,7 +34,13 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String clearString = text.replace(";", " ");
+		String[] split = clearString.split("\\s+\\s*");
+		String[] names = new String[split.length / 3];
+		for (int i = 0, j = 0; i < names.length; i++, j += 3) {
+			names[i] = split[j];
+		}
+		return names;
 	}
 
 	/**
@@ -46,7 +52,13 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String clearString = text.replace(";", "");
+		String[] split = clearString.split("\\s+\\s*");
+		String[] surnames = new String[split.length / 2];
+		for (int i = 0, j = 1; i < surnames.length; i++, j += 2) {
+			surnames[i] = split[j];
+		}
+		return surnames;
 	}
 
 	/**
@@ -58,6 +70,12 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String clearString = text.replace(";", " ");
+		String[] split = clearString.split("[\\s]+\\s*");
+		int[] salaries = new int[split.length / 3];
+		for (int i = 0, b = 2; i < salaries.length; i++, b += 3) {
+			salaries[i] = Integer.parseInt(split[b]);
+		}
+		return salaries;
 	}
 }

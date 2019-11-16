@@ -3,6 +3,8 @@ package com.rakovets.course.practice.string;
 import com.rakovets.course.util.StandardInputTask;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Разработать программу для анализа банковских отчетов.
@@ -33,7 +35,26 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		Pattern pattern = Pattern.compile("\\s[^a-zA-Z|,|\\s]+\\$\\s");
+		Matcher matcher = pattern.matcher(report);
+		String mainString = "";
+		while (matcher.find()) {
+			mainString += matcher.group();
+		}
+		mainString = mainString.replace(" ", "");
+		String[] numbersInString = mainString.split("[$]");
+		double[] numbers;
+		if (mainString == "") {
+			numbers = new double[0];
+		} else {
+			numbers = new double[numbersInString.length];
+		}
+		if (mainString != "") {
+			for (int i = 0; i < numbersInString.length; i++) {
+				numbers[i] = Double.parseDouble(numbersInString[i]);
+			}
+		}
+		return numbers;
 	}
 
 	/**
@@ -45,6 +66,19 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return 0.0;
-	}
+		Pattern pattern = Pattern.compile("\\s[^a-zA-Z|,|\\s]+\\$\\s");
+		Matcher matcher = pattern.matcher(report);
+		String mainString = "";
+		while (matcher.find()) {
+			mainString += matcher.group();
+		}
+		mainString = mainString.replace(" ", "");
+		String[] numbersInString = mainString.split("[$]");
+		double summ = 0;
+		if (mainString != "") {
+			for (int i = 0; i < numbersInString.length; i++) {
+				summ += Double.parseDouble(numbersInString[i]);
+			}
+		}
+		return summ;	}
 }
