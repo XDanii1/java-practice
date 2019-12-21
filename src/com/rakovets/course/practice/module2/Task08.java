@@ -22,8 +22,7 @@ public class Task08 {
 		// Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
 		double tireLength = tireRadius * 2 * Math.PI;
-		tireLength /= 360;
-		tireLength *= encoderDegrees;
+		tireLength =  encoderDegrees / tireLength;
 		System.out.println(tireLength);
 	}
 }
